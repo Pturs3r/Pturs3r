@@ -1,0 +1,64 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(CLAUDE.md)",
+      "Edit(README.md)",
+      "Edit(.claude/settings.json)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git checkout*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(git fetch*)",
+      "Bash(git pull*)"
+    ],
+    "deny": [
+      "Bash(curl*)",
+      "Bash(wget*)",
+      "Bash(nc*)",
+      "Bash(ncat*)",
+      "Bash(bash -c*)",
+      "Bash(sh -c*)",
+      "Bash(eval*)",
+      "Bash(exec*)",
+      "Bash(python* -c*)",
+      "Bash(node -e*)",
+      "Bash(rm -rf*)",
+      "Bash(chmod*)",
+      "Bash(chown*)",
+      "Bash(sudo*)",
+      "Bash(su *)",
+      "Bash(env*)",
+      "Bash(export*)",
+      "Bash(source*)",
+      "Bash(cat /etc/*)",
+      "Bash(cat ~/.ssh/*)",
+      "Bash(cat ~/.aws/*)",
+      "Bash(find / *)",
+      "WebFetch(*)",
+      "WebSearch(*)"
+    ]
+  },
+  "security": {
+    "untrustedContentSources": [
+      "tool_results",
+      "file_contents",
+      "github_pr_descriptions",
+      "github_issue_bodies",
+      "github_review_comments",
+      "web_fetch_results",
+      "bash_output"
+    ],
+    "promptInjectionProtection": true,
+    "requireUserConfirmation": [
+      "destructive_operations",
+      "external_network_access",
+      "secret_access",
+      "scope_change"
+    ]
+  }
+}
